@@ -1,0 +1,240 @@
+:root{ /*global HQ sa CSS. Magbutang ka og variables gamit --*/
+    
+    --primary-color: #78ebd4;
+    --secondary-color: #641ca8; 
+    --bg-color: #110f11;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} /*Ang goal ani is para clean and consistent ang layout across all browsers.and * mean select all elements as in tanan tags. AKA wildcard selector*/
+
+body{
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    font-family: 'Press Start 2P', cursive;
+}
+.container{
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    box-shadow: -3px 2px 30px 10px rgba(193, 139, 244, 0.91);
+    width: 90%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+    margin: 1rem auto;
+}
+
+.screen {
+    display: none;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+.screen.active{
+    display: block;
+
+}
+
+/* start screen*/
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* ensure it fills container width */
+    text-align: center;
+}
+#start-screen h1{
+    color: #6e0471;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+#start-screen p{
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    padding: 0 1rem;
+}
+.quiz-header{
+    margin-bottom: 1rem;
+
+}
+#question-text{
+    color: #000;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-size: 1rem;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem;
+}
+.quiz-info{
+    display: flex;
+    justify-content: space-between;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+}
+.answers-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+.answers-btn{
+    background-color: #f8d9fb;
+    color: #333;
+    border: 2px solid #d66adf;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-family: 'Press Start 2P', cursive;
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    font-size: 0.7rem;
+    word-wrap: break-word; /*long text wraps*/
+}
+.answers-btn:hover{
+    background-color: #ffff;
+    border-color: 2px solid #5ee6d6c8;
+}
+.answers-btn.correct{
+    background-color: var(--secondary-color);
+    border-color: #e2b2fa;
+    color: var(--primary-color);
+}
+.answers-btn.incorrect{
+    background-color: #e80707;
+    border-color: #e2b2fa;
+    color: #66f3fd;
+}
+.progress-bar{
+    height: 10px;
+    background-color: #b798d8;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.progress{
+    height: 100%;
+    background-color: #6e0471;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+
+#result-screen h1{
+    color: #6e0471;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.result-info{
+    background-color: #b798d8;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+.result-info p{
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+#result-message{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6e0471;
+    line-height: 1.4;
+}
+#restart-btn{
+    font-family: 'Press Start 2P', cursive;
+}
+
+button{
+    background-color: #6e0471;
+    color: white;
+    border-color: white;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+    margin: 0 auto;
+    display: block;
+}
+#start-btn:hover{
+    background-color: #3d0876;
+}
+
+#start-btn {
+    width: 50px;          
+    height: 50px;
+    border-radius: 50%;    
+    display: flex;         
+    justify-content: center;
+    align-items: center;
+    background:#6e0471;  
+    color: rgb(255, 255, 255);
+    border: none;         
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 0 auto;
+}
+
+/*responsive design*/
+
+@media (max-width: 500px){
+     /*pag ma hit siyag 500px and below, e implement niya ni nga style*/
+     .container{
+        width: 95%;
+     }
+     .screen{
+        padding: 1rem;
+     }
+
+     #start-screen h1{
+        font-size: 1.5rem;
+     }
+     #question-text{
+        font-size: 0.9rem;
+     }
+     .answers-btn{
+        padding: 0.8rem;
+        min-height: 50px;
+        font-size: 0.6rem;
+     }
+     .quiz-info{
+        flex-direction: column;
+        gap: 0.5rem;
+     }
+     button{
+        padding: 0.7rem 1.2rem;
+        font-size: 0.7rem;
+     }
+     #result-message{
+        font-size: 0.9rem;
+     }
+
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}

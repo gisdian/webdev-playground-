@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.search-bar {
+    display: block;
+}
+.thumbnail{
+    width: 300px;
+    display: block;
+}
+.vid-title {
+    width: 300px;
+}
+.vid-preview{
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+
+}
